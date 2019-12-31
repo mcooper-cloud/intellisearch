@@ -3,7 +3,7 @@
 
 EV3 IntelliSearch
 
-#Project Objective: 
+# Project Objective: 
 
 Alexa assisted search and rescue with Lego EV3
 
@@ -120,10 +120,10 @@ Cardinal positions relative to the grid, are assigned a number
     2 = north east quadrant
     3 = south east quadrant
     4 = south west quadrant
-    5 = true north (half way between 1 and 2)
-    6 = true east (half way between 2 and 3)
-    7 = true south (half way between 3 and 4)
-    8 = true west (half way between 4 and 1)
+    5 = true north (half way between 0 and 2)
+    6 = true east (half way between 2 and 8)
+    7 = true south (half way between 6 and 8)
+    8 = true west (half way between 0 and 6)
 
 
 Cardinal headings are also assigned a number
