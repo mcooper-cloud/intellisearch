@@ -144,3 +144,40 @@ This will cause the robot to stop all motors
     - when the batteries get low, the gyro sensor will begin to fail.  This will cause a turn robot operation to continue for some time ... sometimes indefinitely. ([Errno 6] No such device or address)
     - Alexa does not seem to handle stuttering well
 
+
+# Setup
+
+## How to Setup EV3:
+
+- download ev3dev operating system and flash to micro SD card
+- boot EV3 w/ SD card
+- on the EV3 enable wifi and attach to wifi network
+- on EV3 enable bluetooth
+- Initianlize blue tooth connection by running mission-01.py on the EV3 device
+
+## How to Setup bluetooth connection w/ Alexa
+
+- from the Alexa app on your phone 
+    --> left dropdown 'Settings' 
+    --> Device Settings 
+    --> select the target echo device 
+    --> Blootooth Devices 
+    --> Pair a new device 
+    --> Select the gadget ID (output by mission-01.py)
+
+## Create your Alexa skill
+
+Follow this tutorial for base instructions: https://www.hackster.io/alexagadgets/lego-mindstorms-voice-challenge-mission-1-f31925
+
+## Then what?
+
+After you've created your Alexa skill, and configured your LEGO EV3 brick:
+
+- Push ev3/main.py and ev3/main.ini (and run main.py).  The easist way to do this is to configure wifi on your EV3 brick (see: https://www.ev3dev.org/docs/networking/).  However, you can also setup SSH connections via USB or Bluetooth tethering.
+
+- Push the lambda/function.py and lambda/data.py to S3 where Lambda can pick up the fuction code.
+    - There is a cloudformation template (lambda/intellisearch_cf.json) that can be used to deploy a full working lambda stack.
+    - Additionally, have a look at pipeline/stage_1_prebuild.yml for an example of how to deploy this dynamically via AWS CodeBuild
+
+Once you have main.py running on the EV3 brick, and the lambda function code hosted in AWS, return to your Alexa skill and configure the endpoint to trigger the AWS Lambda function by providing the Lambda ARN to the Alexa skill.
+
