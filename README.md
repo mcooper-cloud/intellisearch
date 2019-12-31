@@ -138,3 +138,9 @@ Cardinal headings are also assigned a number
 Say "Abort"
 
 This will cause the robot to stop all motors
+
+## Kaveats and error conditions
+
+    - when the batteries get low, the gyro sensor will begin to fail.  This will cause a turn robot operation to continue for some time ... sometimes indefinitely. ([Errno 6] No such device or address)
+    - Alexa does not seem to handle stuttering well
+
