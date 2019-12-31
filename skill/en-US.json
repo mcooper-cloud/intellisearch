@@ -1,0 +1,258 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "lego bot",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MoveRobotIntent",
+                    "slots": [
+                        {
+                            "name": "BowStearnDirection",
+                            "type": "BowStearnDirectionType"
+                        },
+                        {
+                            "name": "BowStearnDuration",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "move {BowStearnDirection}",
+                        "move {BowStearnDirection} now",
+                        "move {BowStearnDirection} {BowStearnDuration} rotations",
+                        "move {BowStearnDirection} {BowStearnDuration} rotations now",
+                        "move {BowStearnDirection} for {BowStearnDuration} rotations",
+                        "move {BowStearnDirection} for {BowStearnDuration} rotations now",
+                        "go {BowStearnDirection}",
+                        "go {BowStearnDirection} now",
+                        "go {BowStearnDirection} {BowStearnDuration} rotations",
+                        "go {BowStearnDirection} {BowStearnDuration} rotations now",
+                        "go {BowStearnDirection} for {BowStearnDuration} rotations",
+                        "go {BowStearnDirection} for {BowStearnDuration} rotations now"
+                    ]
+                },
+                {
+                    "name": "TurnRobotIntent",
+                    "slots": [
+                        {
+                            "name": "PortStarboardDirection",
+                            "type": "PortStarboardDirectionType"
+                        },
+                        {
+                            "name": "PortStarboardDuration",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "go {PortStarboardDirection} ",
+                        "turn {PortStarboardDirection}",
+                        "move {PortStarboardDirection}",
+                        "go {PortStarboardDirection} {PortStarboardDuration}",
+                        "turn {PortStarboardDirection} {PortStarboardDuration}",
+                        "move {PortStarboardDirection} {PortStarboardDuration}",
+                        "go {PortStarboardDirection} {PortStarboardDuration} degrees",
+                        "turn {PortStarboardDirection} {PortStarboardDuration} degrees",
+                        "move {PortStarboardDirection} {PortStarboardDuration} degrees"
+                    ]
+                },
+                {
+                    "name": "PauseRobotIntent",
+                    "slots": [
+                        {
+                            "name": "PauseRobot",
+                            "type": "PauseRobotType"
+                        }
+                    ],
+                    "samples": [
+                        "{PauseRobot}",
+                        "{PauseRobot} robot",
+                        "{PauseRobot} now",
+                        "{PauseRobot} robot now"
+                    ]
+                },
+                {
+                    "name": "KillSwitchIntent",
+                    "slots": [
+                        {
+                            "name": "KillSwitch",
+                            "type": "KillSwitchType"
+                        }
+                    ],
+                    "samples": [
+                        "{KillSwitch}",
+                        "{KillSwitch} robot",
+                        "{KillSwitch} now",
+                        "{KillSwitch} robot now"
+                    ]
+                }, 
+                {
+                    "name": "SetGridWidthIntent",
+                    "slots": [
+                        {
+                            "name": "GridWidth",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "grid width {GridWidth}",
+                        "set grid width {GridWidth}",
+                        "set grid width to {GridWidth}",
+                        "grid is {GridWidth} wide",
+                        "the grid is {GridWidth} wide",
+                        "the grid width is {GridWidth}"
+                    ]
+                },
+                {
+                    "name": "SetGridHeightIntent",
+                    "slots": [
+                        {
+                            "name": "GridHeight",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "grid height {GridHeight}",
+                        "set grid height {GridHeight}",
+                        "set grid height to {GridHeight}",
+                        "grid is {GridHeight} wide",
+                        "the grid is {GridHeight} wide",
+                        "the grid height is {GridHeight}"
+                    ]
+                },
+                {
+                    "name": "SetGridPositionIntent",
+                    "slots": [
+                        {
+                            "name": "GridPositionCardinal",
+                            "type": "GridPositionCardinalType"
+                        },
+                        {
+                            "name": "GridPosition",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "grid position {GridPosition}",
+                        "set position {GridPosition}",
+                        "set position to {GridPosition}",
+                        "set grid position {GridPosition}",
+                        "set grid position to {GridPosition}",
+                        "grid position is {GridPosition}",
+                        "the grid position is {GridPosition}",
+                        "grid position {GridPositionCardinal}",
+                        "set position {GridPositionCardinal}",
+                        "set position to {GridPositionCardinal}",
+                        "set grid position {GridPositionCardinal}",
+                        "set grid position to {GridPositionCardinal}",
+                        "grid position is {GridPositionCardinal}",
+                        "the grid position is {GridPositionCardinal}"
+                    ]
+                },
+                {
+                    "name": "StartSearchIntent",
+                    "samples": [
+                        "start search",
+                        "begin search",
+                        "search now"
+                    ]
+                },
+                {
+                    "name": "WalkPerimeterIntent",
+                    "samples": [
+                        "walk perimeter",
+                        "perimeter walk",
+                        "walk outer perimeter"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "BowStearnDirectionType",
+                    "values": [
+                        {"name": {"value": "backwards"}},
+                        {"name": {"value": "backward"}},
+                        {"name": {"value": "reverse"}},
+                        {"name": {"value": "back"}},
+                        {"name": {"value": "back up"}},
+                        {"name": {"value": "behind"}},
+                        {"name": {"value": "forwards"}},
+                        {"name": {"value": "front"}},
+                        {"name": {"value": "forward"}},
+                        {"name": {"value": "ahead"}}
+                    ]
+                },
+                {
+                    "name": "PortStarboardDirectionType",
+                    "values": [
+                        {"name": {"value": "left"}},
+                        {"name": {"value": "right"}}
+                    ]
+                },
+                {
+                    "name": "PauseRobotType",
+                    "values": [
+                        {"name": {"value": "pause"}}
+                    ]
+                },
+                {
+                    "name": "KillSwitchType",
+                    "values": [
+                        {"name": {"value": "abort"}},
+                        {"name": {"value": "kill"}},
+                        {"name": {"value": "killswitch"}}
+                    ]
+                },
+                {
+                    "name": "GridPositionCardinalType",
+                    "values": [
+                        {"name": {"value": "north"}},
+                        {"name": {"value": "south"}},
+                        {"name": {"value": "east"}},
+                        {"name": {"value": "west"}},
+                        {"name": {"value": "true north"}},
+                        {"name": {"value": "true south"}},
+                        {"name": {"value": "true east"}},
+                        {"name": {"value": "true west"}},
+                        {"name": {"value": "northeast"}},
+                        {"name": {"value": "northwest"}},
+                        {"name": {"value": "southeast"}},
+                        {"name": {"value": "southwest"}},
+                        {"name": {"value": "center"}},
+                        {"name": {"value": "middle"}},
+                        {"name": {"value": "top"}},
+                        {"name": {"value": "top left"}},
+                        {"name": {"value": "top right"}},
+                        {"name": {"value": "upper left"}},
+                        {"name": {"value": "upper right"}},
+                        {"name": {"value": "bottom"}},
+                        {"name": {"value": "bottom left"}},
+                        {"name": {"value": "bottom right"}},
+                        {"name": {"value": "lower left"}},
+                        {"name": {"value": "lower right"}},
+                        {"name": {"value": "right"}},
+                        {"name": {"value": "left"}}
+                    ]
+                }
+            ]
+        }
+    }
+}
