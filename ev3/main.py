@@ -166,25 +166,40 @@ class EV3SearchGadget(AlexaGadget):
         ##
         self.data['coordinate_data']['heading_angles'] = {}
 
+        ##
+        ## pointing north
+        ##
         self.data['coordinate_data']['heading_angles'][0] = {
-            1 : 90,
-            2 : 180,
-            3 : -90
+            1 : 90, # east, right turn
+            2 : 180, # south, behind me
+            3 : -90 # west, left turn
         }
+
+        ##
+        ## pointing east
+        ##
         self.data['coordinate_data']['heading_angles'][1] = {
-            0 : -90,
-            2 : 90,
-            3 : 180
+            0 : -90, # north, left turn
+            2 : 90, # south, right turn
+            3 : 180 # west, behind me
         }
+
+        ##
+        ## pointing south
+        ##
         self.data['coordinate_data']['heading_angles'][2] = {
-            0 : 180,
-            1 : -90,
-            3 : 90
+            0 : 180, # north, behind me
+            1 : -90, # east, left turn
+            3 : 90 # west, right turn
         }
+
+        ##
+        ## pointing west
+        ##
         self.data['coordinate_data']['heading_angles'][3] = {
-            0 : 90,
-            1 : 180,
-            2 : -90
+            0 : 90, # north, right turn
+            1 : 180, # east, behind me
+            2 : -90 # south, left turn
         }
 
         ##
@@ -750,7 +765,11 @@ class EV3SearchGadget(AlexaGadget):
                         selected_edge_destination = selected_edge_source
                         selected_edge_heading = self.data['coordinate_data']['heading_compliments'][selected_edge_heading]
 
+
+                    print('[+] ({}) Destination node: {} Destination Heading: {}'.format(datetime.datetime.now(), selected_edge_destination, selected_edge_heading))
+
                     if selected_edge_heading != heading:
+                        print('[+] ({}) Calculating turn angle based on current heading {} and destination heading {}'.format(datetime.datetime.now(), heading, selected_edge_heading))
                         turn_angle = self.data['coordinate_data']['heading_angles'][heading][selected_edge_heading]
                         ##
                         ## now turn the bot
@@ -787,7 +806,6 @@ class EV3SearchGadget(AlexaGadget):
                         rotations = segment_inches/rot_inches
 
                     print('[+] ({}) Driving {} inches using {} rotations'.format(datetime.datetime.now(), segment_inches, rotations))
-                    print('[+] ({}) Destination node: {} Heading: {}'.format(datetime.datetime.now(), position, heading))
 
                     self.move_bow_stearn( rotations=rotations, 
                                           speed=speed,
