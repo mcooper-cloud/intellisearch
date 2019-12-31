@@ -44,7 +44,7 @@ GREETINGS = [
     time_greeting,
     "Howdy,",
     "What's up?",
-    "Oh, hey!",
+    "Hey!",
     "Cool breeze,",
     "Giddyup,"
 ]
@@ -129,9 +129,9 @@ RANDOM_MESSAGES = [
 WELCOME_MESSAGES = [
     "Connecting to {}.  What would you like to do?".format(BOT_NAME),
     "I'm looking for {}.  What would you like to do?".format(BOT_NAME),
-    "Bingo bango wango tango.  {} is waiting for your command".format(BOT_NAME),
+    "Bingo bango wango tango.  What's the angle of your dangle'?",
     "{} is waiting for your command".format(BOT_NAME),
-    "Connecting to {}.  You’re going to ask me for something again, aren’t you?".format(BOT_NAME),
+    "Connecting to {}. Go ahead and aske me something".format(BOT_NAME),
 ]
 
 EXIT_SKILL_MESSAGE = "Closing e v three Intellisearch."
